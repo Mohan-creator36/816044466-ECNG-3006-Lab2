@@ -16,7 +16,6 @@ uint32_t board_time_us(void);
 void board_status_print(void);
 
 /*
- * Q3 CHANGE:
  * Added a function to record task activity
  * with timestamps in the Serial Monitor.
  */
