@@ -15,7 +15,6 @@
 #include "q2.h"
 
 /*
- * Q4 CHANGE:
  * 0 = Equal task priorities
  * 1 = Different task priorities
  */
@@ -39,7 +38,6 @@ static const int TASK3_PRIORITY = 1;
 static SemaphoreHandle_t led_mutex = NULL;
 
 /*
- * Q4 CHANGE:
  * Keep track of how many times each task runs.
  */
 static volatile uint32_t task1Runs = 0U;
@@ -77,7 +75,6 @@ static void task1(void *parameters)
         taskYIELD();
 
         /*
-         * Q4 CHANGE:
          * Block Task 1 for one second.
          * This allows the Idle task to run when
          * the other tasks are also blocked.
@@ -106,7 +103,6 @@ static void task2(void *parameters)
 }
 
 /*
- * Q4 CHANGE:
  * Task 3 reports Idle Hook activity
  * and the number of task executions.
  */
@@ -157,7 +153,6 @@ int q2_start(void)
     }
 
     /*
-     * Q4 CHANGE:
      * Identify the current scheduling test.
      */
 #if Q4_MODE == 0
