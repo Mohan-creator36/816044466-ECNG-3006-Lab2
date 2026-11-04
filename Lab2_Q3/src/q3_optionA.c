@@ -15,14 +15,12 @@
 #include "q2.h"
 
 /*
- * Q3 CHANGE:
  * Set Q3_MODE to 0 for equal priorities.
  * Set Q3_MODE to 1 for Option A.
  */
 #define Q3_MODE 1
 
 /*
- * Q3 CHANGE:
  * Use different priority settings for the two tests.
  * Higher numbers mean higher task priorities.
  */
@@ -76,7 +74,6 @@ static void task1(void *parameters)
         }
 
         /*
-         * Q3 CHANGE:
          * Yield after the 500 ms active wait.
          * No extra task delay is added because
          * we are testing run-to-completion scheduling.
@@ -98,7 +95,7 @@ static void task2(void *parameters)
 
             xSemaphoreGive(led_mutex);
 
-            /* Q3 CHANGE: Record Task 2 execution. */
+            /* Record Task 2 execution. */
             board_log("Task 2: LED OFF");
         }
 
@@ -130,7 +127,6 @@ int q2_start(void)
     }
 
     /*
-     * Q3 CHANGE:
      * Display which scheduling test is running.
      */
 #if Q3_MODE == 0
