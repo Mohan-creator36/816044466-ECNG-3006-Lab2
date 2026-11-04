@@ -28,7 +28,6 @@ extern "C" uint32_t board_time_us(void)
 }
 
 /*
- * Q3 CHANGE:
  * Print task messages with microsecond timestamps
  * to help compare the two scheduling configurations.
  */
@@ -45,7 +44,6 @@ extern "C" void board_status_print(void)
     Serial1.println("Task 3: system running");
 
     /*
-     * Q3 CHANGE:
      * Also display Task 3 with a timestamp
      * in the USB Serial Monitor.
      */
@@ -69,7 +67,7 @@ void setup(void)
 
     vSetErrorSerial(&SerialUSB);
 
-    /* Q3 CHANGE: Updated the startup message. */
+    /* Updated the startup message. */
     SerialUSB.println("Starting Q3 FreeRTOS application");
 
     if (!q2_start())
