@@ -15,7 +15,6 @@
 static const int LED_PIN = LED_BUILTIN;
 
 /*
- * Q4 CHANGE:
  * Count how many times the Idle Hook executes.
  */
 static volatile uint32_t idleCount = 0U;
@@ -30,7 +29,7 @@ extern "C" uint32_t board_time_us(void)
     return micros();
 }
 
-/* Q4 CHANGE: Read the current idle count. */
+/* Read the current idle count. */
 extern "C" uint32_t board_idle_count_read(void)
 {
     return idleCount;
@@ -42,7 +41,6 @@ extern "C" void board_log(const char *message)
 }
 
 /*
- * Q4 CHANGE:
  * Display the Idle Hook results and task counts.
  * Send results through Serial1 and SerialUSB.
  */
@@ -119,7 +117,6 @@ void setup(void)
 }
 
 /*
- * Q4 CHANGE:
  * FreeRTOS_SAMD21 calls Arduino loop() through
  * its existing Idle Hook implementation.
  */
