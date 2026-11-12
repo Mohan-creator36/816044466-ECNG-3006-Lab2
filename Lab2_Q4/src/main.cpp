@@ -117,10 +117,15 @@ void setup(void)
 }
 
 /*
- * FreeRTOS_SAMD21 calls Arduino loop() through
- * its existing Idle Hook implementation.
+ * FreeRTOS Idle Hook.
+ * Called when no higher-priority task is ready to execute.
  */
-void loop(void)
+extern "C" void vApplicationIdleHook(void)
 {
     idleCount++;
+}
+
+void loop(void)
+{
+
 }
