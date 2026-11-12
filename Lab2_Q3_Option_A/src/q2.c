@@ -46,15 +46,17 @@ static const int TASK3_PRIORITY = 1;
 static SemaphoreHandle_t led_mutex = NULL;
 
 /* Actively wait for 500 ms without blocking the task. */
+
 static void active_wait_500ms(void)
 {
     uint32_t start = board_time_us();
 
     while ((uint32_t)(board_time_us() - start) < 500000UL)
     {
-        /* Continue checking until 500 ms have passed. */
+        __asm__ volatile("nop");
     }
 }
+
 
 /* Task 1: Turn LED ON, wait actively, then yield. */
 static void task1(void *parameters)
