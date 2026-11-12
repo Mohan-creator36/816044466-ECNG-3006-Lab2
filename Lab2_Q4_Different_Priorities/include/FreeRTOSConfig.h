@@ -45,8 +45,8 @@
  *----------------------------------------------------------*/
 
 
-#define configUSE_PREEMPTION			0 /* Q3 CHANGE: Enable cooperative scheduling. */
-#define configUSE_TIME_SLICING          0 /* Q3: Disable automatic time slicing. */
+#define configUSE_PREEMPTION			0 
+#define configUSE_TIME_SLICING          0 
 #define configUSE_IDLE_HOOK				1
 #define configUSE_TICK_HOOK				0
 #define configCPU_CLOCK_HZ				( ( unsigned long ) F_CPU  )
