@@ -47,15 +47,17 @@ static volatile uint32_t task2Runs = 0U;
 static volatile uint32_t task3Runs = 0U;
 
 /* Actively wait for half a second. */
+
 static void active_wait_500ms(void)
 {
     uint32_t start = board_time_us();
 
     while ((uint32_t)(board_time_us() - start) < 500000UL)
     {
-        /* Keep waiting until 500 ms have passed. */
+        __asm__ volatile("nop");
     }
 }
+
 
 /* Task 1: Turn the LED ON and actively wait. */
 static void task1(void *parameters)
